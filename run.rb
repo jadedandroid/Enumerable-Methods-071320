@@ -63,37 +63,37 @@ zoos = {
 # Central Park Zoo has just received 4 wolves. Alter the `zoos` information to reflect this new change:
 # Put this hash: { species: "Wolf", count: 4 } in the array under the `:animals` key in Central Park Zoo
 
-
-
-
+zoos["Central Park Zoo"][:animals] << { species: "Wolf", count: 4 }
 
 # The 2 penguins in the Bronx Zoo just had a baby. Alter the `zoos` information to reflect this new change:
 # Increment the number for the `:count` key in the "Penguin" hash in the Bronx Zoo array by 1. 
 # You can assume that the animal at index 0 will always be the "Penguin" hash.
 
-
-
-
+zoos["Bronx Zoo"][:animals][0][:count] += 1
 
 # Each of the zoos in the city just received 2 pandas. Alter the `zoos` information to reflect this new change:
 # In the array of animals under each Zoo, shovel this hash: { species: "Panda", count: 2 }
 
-
-
-
+zoos.each do |zoo, info|
+    info[:animals] << { species: "Panda", count: 2 }
+end
 
 # Return the number of Tigers at the Bronx Zoo.
 # Rather than assuming that the animal at index 2 will always be the "Tiger" hash:
 # First find the "Tiger" hash from the array of Animals at the Bronx Zoo and then, access the value under the ":count" key
 
 
-
-
+# zoos["Bronx Zoo"][:animals].each do |species|
+#     species
+#     binding.pry
+# end
+# binding.pry
 
 
 # Generalize the process to find the ticket price of a specific zoo.
 # In other words, you're given a `name_of_zoo` variable that is a string.
 # Return the price associated with the `name_of_zoo` variable.
+
 
 # No matter which 1 of the 3 variable assignment you choose, your code should work:
 # name_of_zoo = "Bronx Zoo" => returns 25
@@ -140,7 +140,7 @@ zoos = {
 # Consider which higher-level enumerable method(s) you'd use here.
 
 
-
+#binding.pry
 
 
 # Return an array of 3 numbers, each describing the total sum of the number of animals in a zoo.
@@ -154,7 +154,6 @@ zoos = {
 # Find the zoo with the highest count of any species in it. (Butterflies with the 12 count is the highest)
 # The return value should be an array with two elements: ["Bronx Zoo", { location: "Bronx", ... }]
 # Consider which higher-level enumerable method(s) you'd use here.
-
 
 
 
